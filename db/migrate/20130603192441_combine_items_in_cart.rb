@@ -11,7 +11,8 @@ class CombineItemsInCart < ActiveRecord::Migration
                     # замена одной записью
                     cart.line_items.create(product_id: product_id, quantity: quantity)
                 end
-    end end
+            end
+        end
   end
 
   def down
