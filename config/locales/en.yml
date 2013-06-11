@@ -2,26 +2,20 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-
   layouts:
     application:
-      title:"Pragmatic Bookshelf"
-      home:"Home"
-      questions:"Questions"
-      news:"News"
-      contact:"Contact"
-
+      title: "Pragmatic Bookshelf"
+      home: "Home"
+      cart: "Cart"
   store:
     index:
-      title_html:     "Your Pragmatic Catalog"
-      add_html:     "Add to Cart"
-
+      title_html: "Your Pragmatic Catalog"
+      add_html: "Add to Cart"
   carts: 
     cart:
-      title:"Your Cart"
-      empty:"Empty cart"
-      checkout:"Checkout"
-
+      title: "Your Cart"
+      empty: "Empty cart"
+      checkout: "Checkout"
   number:
     currency:
       format:
@@ -30,7 +24,6 @@ en:
         separator:     "."
         delimiter:     ","
         format:	    "%u%n"
-
   orders:
     new:
       legend:         "Please Enter Your Details"
@@ -41,5 +34,4 @@ en:
       pay_type:         "Pay with"
       pay_prompt_html:  "Select a payment method"
       submit:           "Place Order"
-
   thanks: "Thank you for your order"
