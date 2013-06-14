@@ -1,4 +1,4 @@
-class Product < ActiveRecord::Base
+﻿class Product < ActiveRecord::Base
   attr_accessible :description, :image_url, :price, :title
   
   validates :title, uniqueness: true
