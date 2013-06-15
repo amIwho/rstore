@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @product.title %></h2>
-<%= image_tag @product.photo.url(:small) %>
+<%= image_tag @product.photo.url(:big) %>
 <%= simple_format h(@product.description) %>
 
 <p>

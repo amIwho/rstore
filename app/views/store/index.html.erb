@@ -8,7 +8,7 @@
 		<ul class="columns-3 clearfix product-list">
 		<% @products.each do |product| %>
 			<li class="col3">
-				<%= link_to image_tag(product.photo.url(:small), :class => "full-image product-image"), product %>
+				<%= link_to image_tag(product.photo.url(:big), :class => "full-image product-image"), product %>
 				<p class="product-title"><%= link_to product.title, product%></p>
 				<p class="product-price"><%= number_to_currency(product.price)%></p>
 				<div class="product-button clearfix"><%= button_to t('.add_html'), line_items_path(product_id: product), class: "button2", remote: true %></div>
