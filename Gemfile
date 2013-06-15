@@ -37,6 +37,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # To use debugger
 # gem 'debugger'
 
-gem 'modernizr-rails'
+gem 'paperclip'
 gem 'rails-i18n'
 gem 'will_paginate'

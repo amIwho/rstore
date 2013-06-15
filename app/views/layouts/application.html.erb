@@ -42,17 +42,11 @@
 					<li class="checkout-icon"><a href="/checkout.html">Checkout</a></li>
 					<li class="myaccount-icon"><a href="/my-account.html">My Account</a></li>
 				</ul>
-				
-				<div class="cart-top">
-					<% if @cart %>
-						<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-						 <%= render @cart %>
-						<% end %>
-					<% end %>
-				</div>	
+
 			</div>
 		<!-- END .topbar-right -->
-		
+	<!-- END .topbar -->
+	</div>
 		<!-- BEGIN #site-title -->
 		<div id="site-title">
 			<a href="/">
@@ -65,8 +59,8 @@
 		<div id="main-menu-wrapper" class="clearfix">
 			
 			<ul id="main-menu" class="fl sf-js-enabled">
-				<li><a href="/index.html">Home</a></li>
-				<li class="current_page_item"><a href="./catalog_files/catalog.htm" class="sf-with-ul">Products<span class="sf-sub-indicator"> »</span></a>
+				<li><a href="/">Каталог<br />продукции</a></li>
+				<!--<li class="current_page_item"><a href="/" class="sf-with-ul">Каталог продукции<span class="sf-sub-indicator"> »</span></a>
 					<ul style="display: none; visibility: hidden;">
 						<li><a href="/product-single.html">Cleansers</a></li>
 						<li><a href="/product-single.html">Exfoliators &amp; Masks</a></li>
@@ -78,21 +72,11 @@
 							</ul>
 						</li>
 					</ul>
-				</li>
-				<li><a href="/blog.html">Blog</a></li>
-				<li><a href="/testimonials.html">Testimonials</a></li>
-				<li class=""><a href="/typography.html" class="sf-with-ul">About<span class="sf-sub-indicator"> »</span></a>
-					<ul style="display: none; visibility: hidden;">
-						<li><a href="/typography.html">Typography</a></li>
-						<li><a href="/js-elements.html">JS Elements</a></li>
-					</ul>
-				</li>
-				<li><a href="/contact.html">Contact</a></li>	
+				</li>-->
+				<li><a href="/blog">Блог</a></li>
+				<li><a href="/testimonials">Отзывы</a></li>
+				<li><a href="/contact.html">Контактная<br /> информация</a></li>	
 			</ul>
-			
-			<form method="get" action="/" id="menu-search" class="fr">
-				<input type="text" name="s">
-			</form>
 		<!-- END .main-menu-wrapper -->	
 
 		<select><option selected="selected" value="">Go to...</option><option value="index.html">Home</option><option value="products.html">Products »</option><option value="product-single.html">Cleansers</option><option value="product-single.html">Exfoliators &amp; Masks</option><option value="product-single.html">Toners</option><option value="product-single.html">Moisturisers »</option><option value="product-single.html">Hands</option><option value="product-single.html">Face</option><option value="blog.html">Blog</option><option value="testimonials.html">Testimonials</option><option value="typography.html">About »</option><option value="typography.html">Typography</option><option value="js-elements.html">JS Elements</option><option value="contact.html">Contact</option></select></div>

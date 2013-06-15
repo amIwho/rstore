@@ -8,11 +8,10 @@
 		<ul class="columns-3 clearfix product-list">
 		<% @products.each do |product| %>
 			<li class="col3">
-				<%= link_to image_tag(product.image_url, :class => "full-image product-image"), product %>
+				<%= link_to image_tag(product.photo.url(:small), :class => "full-image product-image"), product %>
 				<p class="product-title"><%= link_to product.title, product%></p>
 				<p class="product-price"><%= number_to_currency(product.price)%></p>
-				<p class="product-button clearfix"><%= button_to t('.add_html'), line_items_path(product_id: product),
-				remote: true %></p>
+				<div class="product-button clearfix"><%= button_to t('.add_html'), line_items_path(product_id: product), class: "button2", remote: true %></div>
 			</li>
 		<% end %>
 		</ul>
@@ -24,6 +23,15 @@
 	<li class="col-sidebar">
 
 		<div class="widget">
+			<% if @cart %>
+				<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+				 <%= render @cart %>
+				<% end %>
+			<% end %>
+		</div>	
+		
+		
+		<div class="widget">
 			<div class="widget-title clearfix"><h4 class="tag-title">Categories</h4></div>
 			<ul>
 				<li><a href="/">Skin Care</a></li>
@@ -34,6 +42,7 @@
 				<li><a href="/">Moisturisers</a></li>
 			</ul>
 		</div>
+		
 	<!-- END .col-sidebar -->
 	</li>
 <% end %>
