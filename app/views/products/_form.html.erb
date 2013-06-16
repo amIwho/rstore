@@ -23,9 +23,13 @@
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
-  <div class="field">
+ <div class="field">
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
   </div>
   
   <div class="actions">
