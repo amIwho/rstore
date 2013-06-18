@@ -15,6 +15,5 @@
 //= require jquery.ui.effect-blind
 //= require jquery.ui.effect
 //= require jquery.ui.tabs
-//= require jquery.ui.all
 //= require jquery_ujs
 //= require_tree .
