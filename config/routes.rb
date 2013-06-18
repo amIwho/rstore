@@ -16,6 +16,7 @@ scope '(:locale)' do
   resources :line_items
   resources :carts
   get "store/index"
+  get "store/show"
   resources :products do
     get :who_bought, on: :member
   end
