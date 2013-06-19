@@ -1,4 +1,4 @@
-class OrderNotifier < ActionMailer::Base
+﻿class OrderNotifier < ActionMailer::Base
   default from: "no-reply@altaviel.ru"
 
   # Subject can be set in your I18n file at config/locales/en.yml

@@ -13,7 +13,9 @@ ru:
     index:
       title_html: "Каталог наручных часов"
       add_html: "В корзину"
-
+    show:
+      title_html: "Каталог наручных часов"
+      add_html: "В корзину &raquo;" 
   carts: 
     cart:
       title: "Ваша корзина"

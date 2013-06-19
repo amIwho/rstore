@@ -11,6 +11,9 @@ en:
     index:
       title_html: "Your Pragmatic Catalog"
       add_html: "Add to Cart"
+    show:
+      title_html: "Your Pragmatic Catalog"
+      add_html: "Add to Cart &raquo;"
   carts: 
     cart:
       title: "Your Cart"
