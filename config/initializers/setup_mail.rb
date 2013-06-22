@@ -1,11 +1,12 @@
-config.action_mailer.delivery_method = :smtp
-
-config.action_mailer.smtp_settings = {
-        address:          "smtp.gmail.com", 
-        port:             "587", 
-        authentication:   "plain",
-        domain:           "altaviel.ru", 
-        user_name:        "kalinon7@gmail.com",
-        password:         "Djkit,cndj",
-        enable_starttls_auto: true
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.smtp_settings = {
+    address:              "smtp.altaviel.ru",
+    port:                 "25",
+    domain:               "altaviel.ru",
+    user_name:            "noreply@altaviel.ru",
+    password:             "",
+    openssl_verify_mode:  'none',
+    authentication:       :plain,
+    enable_starttls_auto: true
 }
