@@ -954,6 +954,11 @@ hr {
   border-color: #e3e3e3;
 }
 
+
+
+
+
+
 .button3 {
   font-size: 14px;
   font-weight: bold;
@@ -979,6 +984,11 @@ hr {
 
 .button1:hover, .button2:hover, .button3:hover, .button4:hover {
   cursor: pointer;
+}
+
+.button2:hover {
+	background: #80b600;
+	color: white;
 }
 
 .account-table .button2 {

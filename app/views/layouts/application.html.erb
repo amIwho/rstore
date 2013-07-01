@@ -57,6 +57,11 @@
 			
 			<ul id="main-menu" class="fl sf-js-enabled">
 				<li><a href="/">Каталог<br />продукции</a></li>
+				<% if session[:user_id] %>
+					<li><%= link_to "Продукты", products_path %></li>
+					<li><%= link_to "Категории", categories_path %></li>
+					<li><%= link_to "Заказы", orders_path %></a></li>
+				<% end %>
 			</ul>
 		</div>
 		<!-- END .main-menu-wrapper -->	
@@ -64,6 +69,12 @@
 	<div class="section">
 			
 		<ul class="columns-content page-content testimonial-full clearfix">
+			<% flash.each do |key, msg| %>
+				<%= content_tag :div, msg, :id => key %>
+			<% end %>
+			
+			
+			
 			<%= yield %>
 			<%= yield :sidebar %>
 		</ul>

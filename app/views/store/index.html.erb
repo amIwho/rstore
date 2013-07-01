@@ -3,10 +3,11 @@
  <% end %>
 <!-- BEGIN .col-main -->
 <li class="col-main">
-	<h2 class="page-title"><%= t('.title_html') %></h2>
+	<% @categories.each do |cat| %>
+	<h2 class="page-title"><%= cat.name %> <%= link_to "показать все>>", cat %></h2>
 
 		<ul class="columns-3 clearfix product-list">
-		<% @products.each do |product| %>
+		<% cat.products.each do |product| %>
 			<li class="col3">
 				<%= image_tag(product.photo.url(:big), :class => "full-image product-image") %>
 				<p class="product-title"><%= link_to product.title, store_show_path(product_id: product)%></p>
@@ -15,6 +16,7 @@
 			</li>
 		<% end %>
 		</ul>
+	<% end %>
 </li>
 <!-- END .col-main -->
 

@@ -1,11 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+<h2>
+  <%= @category.name %> 
+  <% if session[:user_id] %>
+  <%= link_to 'Edit', edit_category_path(@category) %>
+  <% end %>
+</h2>
 
+<!-- BEGIN .col-main -->
+<li class="col-main">
+	<ul class="columns-3 clearfix product-list">
+		<% @products.each do |product| %>
+			<li class="col3">
+				<%= image_tag(product.photo.url(:big), :class => "full-image product-image") %>
+				<p class="product-title"><%= link_to product.title, store_show_path(product_id: product)%></p>
+				<p class="product-price"><%= number_to_currency(product.price)%></p>
+				<div class="product-button clearfix"><%= button_to "В корзину", line_items_path(product_id: product), class: "button2", remote: true %></div>
+			</li>
+		<% end %>
+	</ul>
+</li>
+<!-- END .col-main -->
 
-<%= render 'products'%>
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<% content_for :sidebar do %>
+	<!-- BEGIN .col-sidebar -->
+	<li class="col-sidebar">
+
+		<div class="widget">
+			<div id="cart">
+			<% if @cart %>
+				<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+				 <%= render @cart %>
+				<% end %>
+			<% end %>
+			</div>
+		</div>	
+		
+		
+		<div class="widget">
+			<div class="widget-title clearfix"><h4 class="tag-title">Categories</h4></div>
+			<ul>
+				<% Category.all.each do |cat| %>
+					<li><%= link_to cat.name, cat %></a></li>
+				<% end %>
+			</ul>
+		</div>
+		
+	<!-- END .col-sidebar -->
+	</li>
+<% end %>

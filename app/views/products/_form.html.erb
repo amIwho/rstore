@@ -24,6 +24,7 @@
     <%= f.text_field :price %>
   </div>
  <div class="field">
+	 <%= image_tag @product.photo.url(:small) %>
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
   </div>

@@ -6,6 +6,9 @@
     if locale
      redirect_to store_path(locale: locale)
     else
+      @categories = Category.all
+      
+      
      @products = Product.order(:title)
      @cart = current_cart
      end
@@ -14,7 +17,7 @@
 
   def show
     @product = Product.find(params[:product_id])
-
+    @cart = current_cart
     respond_to do |format|
       format.html
       format.json { render json: @product }

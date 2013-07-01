@@ -14,7 +14,7 @@
 									<ul class="slides">
 										
 										<li>
-											<a href="#" title="Slide 1" target="_blank"><img src="images/image1.jpg" alt=""></a>
+											<a href="#" title="Slide 1" target="_blank"><%= image_tag @product.photo.url(:big) %></a>
 										</li>
 										<li>
 											<a href="#" title="Slide 2" target="_blank"><img src="images/image2.jpg" alt=""></a>
@@ -30,8 +30,8 @@
 							<li class="col2 clearfix">
 								
 								<h2>
-									<span class="price-now">£14.99</span>
-									<span class="price-original">£19.99</span>
+									<span class="price-now"><%= number_to_currency(@product.price) %></span>
+									<!--<span class="price-original">£19.99</span>-->
 								</h2>
 								
 								<p>Vestibulum lacinia neque eu mi accumsan faucibus. Vivamus sed odio nisl, porta facilisis magna. Maecenas sed mi ac ante gravida porta id eget odio. Mauris vel leo nibh. Quisque enim sem, porttitor et congue vehicula, congue sit amet felis.</p>
@@ -53,7 +53,7 @@
 								<li><a href="#tabs-tab-title-2">Technical Specs</a></li>
 								<li><a href="#tabs-tab-title-3">Delivery</a></li>
 							</ul>
-							<div id="tabs-tab-title-1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et rhoncus neque. Maecenas enim nunc, dapibus in mattis eleifend, luctus et magna. Maecenas nunc est, posuere sed convallis tincidunt</p></div>
+							<div id="tabs-tab-title-1"><p><%= simple_format h(@product.description) %></p></div>
 							<div id="tabs-tab-title-2"><p>Morbi lacinia, nisi nec rutrum faucibus, enim augue feugiat libero, sit amet sollicitudin massa nisi eget nulla. Etiam pretium, est sit amet eleifend posuere, tellus nisl interdum massa</p></div>
 							<div id="tabs-tab-title-3"><p>Ut bibendum ullamcorper tortor, eget aliquet odio facilisis quis. Nulla interdum aliquet scelerisque. Curabitur ante metus, laoreet eu convallis a, tristique a arcu. Donec id erat sed lectus congue tempor</p></div>
 						</div>
@@ -61,17 +61,3 @@
 				<!-- END .col-main -->
 				</li>
 
-
-
-
-<%= image_tag @product.photo.url(:big) %>
-<%= simple_format h(@product.description) %>
-
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>

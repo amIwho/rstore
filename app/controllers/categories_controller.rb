@@ -1,8 +1,11 @@
 class CategoriesController < ApplicationController
+  
+  skip_before_filter :authorize, only: [:index, :show]
+  
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories ||= Category.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +16,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.find(params[:id])
+    @category ||= Category.find(params[:id])
     @products = @category.products
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +37,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    @category = Category.find(params[:id])
+    @category ||= Category.find(params[:id])
   end
 
   # POST /categories
@@ -56,7 +59,7 @@ class CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.json
   def update
-    @category = Category.find(params[:id])
+    @category ||= Category.find(params[:id])
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
@@ -72,7 +75,7 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
-    @category = Category.find(params[:id])
+    @category ||= Category.find(params[:id])
     @category.destroy
 
     respond_to do |format|

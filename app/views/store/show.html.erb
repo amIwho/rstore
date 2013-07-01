@@ -1,58 +1,56 @@
 <p id="notice"><%= notice %></p>
 
 <!-- BEGIN .col-main -->
-				<li class="col-main">
+	<li class="col-main">				
+		<h2 class="page-title"><%= @product.title %></h2>
+
+		<ul class="columns-2 product-single-content clearfix">
+			<li class="col2 clearfix">
+				<!-- BEGIN .slider -->
+				<div class="slider-single slide-loader-single clearfix">
+					<ul class="slides">
+						
+						<li>
+							<%= image_tag @product.photo.url(:big) %>
+						</li>
+						<li>
+							<%= image_tag @product.photo.url(:big) %>
+						</li>
+						<li>
+							<%= image_tag @product.photo.url(:big) %>
+						</li>
+					</ul>
+				<!-- END .slider -->
+				</div>
+				
+			</li>
+			<li class="col2 clearfix">
+				
+				<h2>
+					<span class="price-original"><%= @product.price + @product.price*0.1   %></span>
+					<span class="price-now"><%= number_to_currency(@product.price) %></span>
 					
-					<h2 class="page-title"><%= @product.title %></h2>
+				</h2>
+				
+				<p><%= simple_format h(@product.description) %></p>
+				
+					<%= button_to t('.add_html'), line_items_path(product_id: @product), class: "button3 fr", remote: true %>						
 
-						<ul class="columns-2 product-single-content clearfix">
-							
-							<li class="col2 clearfix">
-								
-								<!-- BEGIN .slider -->
-								<div class="slider-single slide-loader-single clearfix">
-									<ul class="slides">
-										
-										<li>
-											<%= image_tag @product.photo.url(:big) %>
-										</li>
-										<li>
-											<a href="#" title="Slide 2" target="_blank"><img src="images/image2.jpg" alt=""></a>
-										</li>
-										<li>
-											<a href="#" title="Slide 3" target="_blank"><img src="images/image3.jpg" alt=""></a>
-										</li>
-									</ul>
-								<!-- END .slider -->
-								</div>
-								
-							</li>
-							<li class="col2 clearfix">
-								
-								<h2>
-									<span class="price-now">£14.99</span>
-									<span class="price-original"><%= @product.price %></span>
-								</h2>
-								
-								<p>Vestibulum lacinia neque eu mi accumsan faucibus. Vivamus sed odio nisl, porta facilisis magna. Maecenas sed mi ac ante gravida porta id eget odio. Mauris vel leo nibh. Quisque enim sem, porttitor et congue vehicula, congue sit amet felis.</p>
-								
-									<%= button_to t('.add_html'), line_items_path(product_id: @product), class: "button3 fr", remote: true %>						
-
-								
-							</li>
-						
-						</ul>
-						
-						<div id="tabs">
-							<ul class="nav clearfix">
-								<li><a href="#tabs-tab-title-1">Product Features</a></li>
-								<li><a href="#tabs-tab-title-2">Technical Specs</a></li>
-								<li><a href="#tabs-tab-title-3">Delivery</a></li>
-							</ul>
-							<div id="tabs-tab-title-1"><%= simple_format h(@product.description) %></div>
-							<div id="tabs-tab-title-2"><p>Morbi lacinia, nisi nec rutrum faucibus, enim augue feugiat libero, sit amet sollicitudin massa nisi eget nulla. Etiam pretium, est sit amet eleifend posuere, tellus nisl interdum massa</p></div>
-							<div id="tabs-tab-title-3"><p>Ut bibendum ullamcorper tortor, eget aliquet odio facilisis quis. Nulla interdum aliquet scelerisque. Curabitur ante metus, laoreet eu convallis a, tristique a arcu. Donec id erat sed lectus congue tempor</p></div>
-						</div>
+				
+			</li>
+		
+		</ul>
+		
+		<div id="tabs">
+			<ul class="nav clearfix">
+				<li><a href="#tabs-tab-title-1" onclick="return false;">Описание</a></li>
+				<li><a href="#tabs-tab-title-2" onclick="return false;">Технические детали</a></li>
+				<li><a href="#tabs-tab-title-3" onclick="return false;">Доставка</a></li>
+			</ul>
+			<div id="tabs-tab-title-1"><%= simple_format h(@product.description) %></div>
+			<div id="tabs-tab-title-2"><%= simple_format h(@product.description) %></div>
+			<div id="tabs-tab-title-3"><%= simple_format h(@product.description) %></div>
+		</div>
 				
 				<!-- END .col-main -->
 				</li>
@@ -63,16 +61,16 @@
 		<div class="widget">
 			<div id="cart">
 			<% if @cart %>
-				<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+				
 				 <%= render @cart %>
-				<% end %>
+				
 			<% end %>
 			</div>
 		</div>	
 		
 		
 		<div class="widget">
-			<div class="widget-title clearfix"><h4 class="tag-title">Categories</h4></div>
+			<div class="widget-title clearfix"><h4 class="tag-title">Категории</h4></div>
 			<ul>
 				<% Category.all.each do |cat| %>
 					<li><%= link_to cat.name, cat %></a></li>
