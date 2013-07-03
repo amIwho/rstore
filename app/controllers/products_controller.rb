@@ -78,6 +78,7 @@
     respond_to do |format|
       format.html { redirect_to products_url }
       format.json { head :no_content }
+      format.js {redirect_to products_url}
     end
   end
   

@@ -6,6 +6,7 @@
     <th>Address</th>
     <th> email</th>
     <th>Pay type</th>
+    <th><b>Заказал товар:</b></th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,8 +16,11 @@
   <tr>
     <td><%= order.name %></td>
     <td><%= order.address %></td>
-    <td><%= order. email %></td>
+    <td><%= order.email %></td>
     <td><%= order.pay_type %></td>
+      <td>
+  <% render order.line_items %>
+    </td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
