@@ -25,5 +25,5 @@ production:
   database: rstore
   pool: 5
   username: rstore
-  password: Ghjvbyfn2
+  password: ':jgfceifvb14'
   host: localhost 
