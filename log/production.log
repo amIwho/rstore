@@ -1641,3 +1641,25 @@ Processing by StoreController#index as HTML
   Rendered carts/_cart.html.erb (0.9ms)
   Rendered store/index.html.erb within layouts/application (48.6ms)
 Completed 200 OK in 96ms (Views: 55.5ms | ActiveRecord: 9.2ms)
+Connecting to database specified by database.yml
+Started GET "/" for 128.74.224.132 at 2013-07-11 19:46:02 +0000
+Processing by StoreController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'rstore.categories' doesn't exist: SHOW FULL FIELDS FROM `categories`):
+  app/controllers/store_controller.rb:9:in `index'
+
+
+Started GET "/" for 128.74.224.132 at 2013-07-11 19:56:48 +0000
+Processing by StoreController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'rstore.categories' doesn't exist: SHOW FULL FIELDS FROM `categories`):
+  app/controllers/store_controller.rb:9:in `index'
+
+
+Started GET "/" for 128.74.224.132 at 2013-07-11 20:15:25 +0000
+Processing by StoreController#index as HTML
+  Rendered carts/_cart.html.erb (40.7ms)
+  Rendered store/index.html.erb within layouts/application (634.5ms)
+Completed 200 OK in 701ms (Views: 641.3ms | ActiveRecord: 14.7ms)
