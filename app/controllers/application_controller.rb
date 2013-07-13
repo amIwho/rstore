@@ -3,9 +3,14 @@
   
   before_filter :authorize
   before_filter :set_i18n_locale_from_params
+  before_filter :initialize_variables
   # ...
   
   protected
+
+  def initialize_variables
+    @cart = current_cart
+  end
       
   def set_i18n_locale_from_params
     locale = params[:locale]

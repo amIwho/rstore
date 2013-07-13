@@ -11,12 +11,6 @@ group :assets do
   gem "jquery-ui-rails"
 end
 
-group :development do
-  gem "capistrano"
-  gem "rvm-capistrano"
-end
-
-
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -27,3 +21,4 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'yaml_db'
 gem 'mysql2'
+gem 'cells'

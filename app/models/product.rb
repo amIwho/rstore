@@ -1,7 +1,7 @@
 ﻿class Product < ActiveRecord::Base
   attr_accessible :description, :price, :title, :category_id, :photo
   
-  has_attached_file :photo, styles: { small: "150x150>", big: "300x300>"},
+  has_attached_file :photo, styles: { small: "300x300>", big: "600x600>"},
   :url  => "/assets/products/:id/:style/:basename.:extension",
   :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
   

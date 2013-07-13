@@ -19,8 +19,8 @@ ru:
   carts: 
     cart:
       title: "Ваша корзина"
-      empty: "Очистить корзину"
-      checkout: "Заказ"
+      empty: "Очистить"
+      checkout: "Проследовать на кассу"
 
   number:
     currency:

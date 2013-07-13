@@ -679,9 +679,9 @@ blockquote {
 }
 
 .page-title {
-  background: url(darkdots.png) repeat-x bottom;
+  /*background: url(darkdots.png) repeat-x bottom;*/
   padding: 0 0 12px 0;
-  margin: 0 0 30px 0;
+  margin: 24px 0 12px 0;
 }
 
 .site-intro {
@@ -705,7 +705,7 @@ blockquote {
   text-decoration: line-through;
 }
 
-/* 5.1 - Lists */
+ /*5.1 - Lists */
 
 .page-content ul, .list, .list2, .list3, .list4 {
   margin: 0 0 30px 0;
@@ -769,7 +769,7 @@ ol {
   }
 }
 
-/* 5.2 - Forms */
+ /*5.2 - Forms*/
 
 .page-content input {
   &[type="text"], &[type="password"] {
@@ -1024,6 +1024,7 @@ hr {
   }
   tr:nth-child(2n) {
     background: #f5f5f5;
+    font-weight: bolder;
   }
 }
 
@@ -1109,11 +1110,12 @@ hr {
     margin: 0 3.5% 0 0;
     list-style: none;
     border: none;
+    text-align: center;
     &:nth-child(3n) {
       margin: 0;
     }
     .full-image {
-      width: 100%;
+      width: 70%;
     }
   }
 }
@@ -1574,7 +1576,7 @@ ul.comment-list {
 /* 10.0 - Widgets */
 
 .widget {
-  background: url(darkdots.png) repeat-x bottom;
+  /*background: url(darkdots.png) repeat-x bottom;*/
   padding: 0 0 30px 0;
   margin: 0 0 30px 0;
 }

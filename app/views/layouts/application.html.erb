@@ -76,7 +76,38 @@
 			
 			
 			<%= yield %>
-			<%= yield :sidebar %>
+
+
+
+			<!-- BEGIN .col-sidebar -->
+<br />
+			<li class="col-sidebar">
+
+				<div class="widget">
+					
+					<% if @cart %>
+					
+						<div id="cart">
+							<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+							 <%= render @cart %>
+							<% end %>
+						</div>
+					<% end %>
+					
+				</div>	
+				
+				
+				<div class="widget">
+					<div class="widget-title clearfix"><h4 class="tag-title">Categories</h4></div>
+					<ul class="list1">
+						<% Category.all.each do |cat| %>
+							<li><%= link_to cat.name, cat %></a></li>
+						<% end %>
+					</ul>
+				</div>
+				
+			<!-- END .col-sidebar -->
+			</li>
 		</ul>
 	<!-- END .section -->
 	</div>
@@ -111,10 +142,10 @@
 			<div class="fl">
 				
 				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/">Terms &amp; Conditions</a></li>
-					<li><a href="/">Return Policy</a></li>
-					<li><a href="/">Contact Us</a></li>
+					<li><a href="/">Каталог продукции</a></li>
+					<li><a href="/">Доставка и оплата</a></li>
+					<li><a href="/">Гарантийные обязательства</a></li>
+					<li><a href="/">Контактная информация</a></li>
 				</ul>
 				
 				<p>© Copyright 2013</p>
